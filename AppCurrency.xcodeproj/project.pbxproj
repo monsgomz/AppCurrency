@@ -11,6 +11,16 @@
 		C2C3020F2C5DC40B00AADE3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3020E2C5DC40B00AADE3D /* ContentView.swift */; };
 		C2C302112C5DC40C00AADE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C302102C5DC40C00AADE3D /* Assets.xcassets */; };
 		C2C302142C5DC40C00AADE3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C302132C5DC40C00AADE3D /* Preview Assets.xcassets */; };
+		C2C3021E2C5DC8B200AADE3D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3021D2C5DC8B200AADE3D /* Home.swift */; };
+		C2C302212C5DCA6700AADE3D /* NotoSansJP-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2C302202C5DCA6700AADE3D /* NotoSansJP-Black.ttf */; };
+		C2C302232C5DCA7D00AADE3D /* NotoSansJP-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2C302222C5DCA7C00AADE3D /* NotoSansJP-Thin.ttf */; };
+		C2C302252C5DCA8800AADE3D /* NotoSansJP-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2C302242C5DCA8800AADE3D /* NotoSansJP-Regular.ttf */; };
+		C2C302272C5DCA9500AADE3D /* NotoSansJP-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2C302262C5DCA9500AADE3D /* NotoSansJP-Medium.ttf */; };
+		C2C3022A2C5DCD0300AADE3D /* FavoritosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C302292C5DCD0300AADE3D /* FavoritosView.swift */; };
+		C2C3022C2C616F1200AADE3D /* monedaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3022B2C616F1200AADE3D /* monedaItem.swift */; };
+		C2C3022E2C61747000AADE3D /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3022D2C61747000AADE3D /* ConverterView.swift */; };
+		C2C302312C617A1F00AADE3D /* modelCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C302302C617A1F00AADE3D /* modelCurrency.swift */; };
+		C2C302332C617A7400AADE3D /* CurrencyMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C302322C617A7400AADE3D /* CurrencyMV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +29,17 @@
 		C2C3020E2C5DC40B00AADE3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C2C302102C5DC40C00AADE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2C302132C5DC40C00AADE3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C2C3021D2C5DC8B200AADE3D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C2C302202C5DCA6700AADE3D /* NotoSansJP-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Black.ttf"; sourceTree = "<group>"; };
+		C2C302222C5DCA7C00AADE3D /* NotoSansJP-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Thin.ttf"; sourceTree = "<group>"; };
+		C2C302242C5DCA8800AADE3D /* NotoSansJP-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Regular.ttf"; sourceTree = "<group>"; };
+		C2C302262C5DCA9500AADE3D /* NotoSansJP-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Medium.ttf"; sourceTree = "<group>"; };
+		C2C302282C5DCAEA00AADE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C2C302292C5DCD0300AADE3D /* FavoritosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosView.swift; sourceTree = "<group>"; };
+		C2C3022B2C616F1200AADE3D /* monedaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monedaItem.swift; sourceTree = "<group>"; };
+		C2C3022D2C61747000AADE3D /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
+		C2C302302C617A1F00AADE3D /* modelCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelCurrency.swift; sourceTree = "<group>"; };
+		C2C302322C617A7400AADE3D /* CurrencyMV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +72,11 @@
 		C2C3020B2C5DC40B00AADE3D /* AppCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				C2C302282C5DCAEA00AADE3D /* Info.plist */,
+				C2C3021F2C5DCA2C00AADE3D /* Fonts */,
+				C2C3021C2C5DC47B00AADE3D /* ModelView */,
+				C2C3021B2C5DC46B00AADE3D /* Views */,
+				C2C3021A2C5DC43B00AADE3D /* Model */,
 				C2C3020C2C5DC40B00AADE3D /* AppCurrencyApp.swift */,
 				C2C3020E2C5DC40B00AADE3D /* ContentView.swift */,
 				C2C302102C5DC40C00AADE3D /* Assets.xcassets */,
@@ -65,6 +91,52 @@
 				C2C302132C5DC40C00AADE3D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C2C3021A2C5DC43B00AADE3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2C302302C617A1F00AADE3D /* modelCurrency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2C3021B2C5DC46B00AADE3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2C3022F2C61747600AADE3D /* Helpers */,
+				C2C3021D2C5DC8B200AADE3D /* Home.swift */,
+				C2C3022D2C61747000AADE3D /* ConverterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2C3021C2C5DC47B00AADE3D /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				C2C302322C617A7400AADE3D /* CurrencyMV.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		C2C3021F2C5DCA2C00AADE3D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C2C302262C5DCA9500AADE3D /* NotoSansJP-Medium.ttf */,
+				C2C302242C5DCA8800AADE3D /* NotoSansJP-Regular.ttf */,
+				C2C302222C5DCA7C00AADE3D /* NotoSansJP-Thin.ttf */,
+				C2C302202C5DCA6700AADE3D /* NotoSansJP-Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C2C3022F2C61747600AADE3D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C2C302292C5DCD0300AADE3D /* FavoritosView.swift */,
+				C2C3022B2C616F1200AADE3D /* monedaItem.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +197,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C302272C5DCA9500AADE3D /* NotoSansJP-Medium.ttf in Resources */,
 				C2C302142C5DC40C00AADE3D /* Preview Assets.xcassets in Resources */,
+				C2C302212C5DCA6700AADE3D /* NotoSansJP-Black.ttf in Resources */,
+				C2C302232C5DCA7D00AADE3D /* NotoSansJP-Thin.ttf in Resources */,
 				C2C302112C5DC40C00AADE3D /* Assets.xcassets in Resources */,
+				C2C302252C5DCA8800AADE3D /* NotoSansJP-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C3020F2C5DC40B00AADE3D /* ContentView.swift in Sources */,
+				C2C302332C617A7400AADE3D /* CurrencyMV.swift in Sources */,
+				C2C3021E2C5DC8B200AADE3D /* Home.swift in Sources */,
+				C2C302312C617A1F00AADE3D /* modelCurrency.swift in Sources */,
+				C2C3022A2C5DCD0300AADE3D /* FavoritosView.swift in Sources */,
+				C2C3022E2C61747000AADE3D /* ConverterView.swift in Sources */,
+				C2C3022C2C616F1200AADE3D /* monedaItem.swift in Sources */,
 				C2C3020D2C5DC40B00AADE3D /* AppCurrencyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +357,7 @@
 				DEVELOPMENT_TEAM = Z28MDHV9K2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppCurrency/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +387,7 @@
 				DEVELOPMENT_TEAM = Z28MDHV9K2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppCurrency/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
