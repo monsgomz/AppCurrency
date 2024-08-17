@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct monedaItem: View {
+struct MonedaItem: View {
+	var monedaNombre: String
+	var nombreCorto: String
+	
     var body: some View {
 		HStack(alignment: .center, spacing: 15){
 			Image(systemName: "dollarsign.arrow.circlepath")
@@ -15,7 +18,10 @@ struct monedaItem: View {
 				.aspectRatio(contentMode: .fill)
 				.frame(width: 30, height: 30)
 //				.foregroundStyle(Color.white)
-			Text("Nombre moneda")
+			Text(nombreCorto)
+				.font(.custom("Noto Sans JP Thin", size: 16))
+			Text(monedaNombre)
+				
 			Spacer()
 			
 		}
@@ -31,5 +37,5 @@ struct monedaItem: View {
 }
 
 #Preview {
-    monedaItem()
+	MonedaItem(monedaNombre: "Mexican pesos", nombreCorto: "MXN")
 }

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct AppCurrencyApp: App {
+	@State private var methods = CallMethods()
     var body: some Scene {
         WindowGroup {
             ContentView()
+				.environment(methods)
         }
     }
 }

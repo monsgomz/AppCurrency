@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ConverterView: View {
+	@State var showSheet: Bool = false
+	
     var body: some View {
 		VStack(alignment: .leading){
 			Text("Convertir")
@@ -15,11 +17,10 @@ struct ConverterView: View {
 			Spacer()
 		}
 		.overlay{
-			ContentUnavailableView("No hay monedas a convertir", systemImage: "archivebox", description: Text("Agrega una nueva conversión"))
+			ContentUnavailableView("No hay datos a convertir", systemImage: "archivebox", description: Text("Agrega una nueva conversión"))
 				.frame(width: 400, height: 300, alignment: .center)
 		}
 		.overlay(alignment: .topTrailing){
-			NavigationLink(destination: ConverterView()){
 				ZStack{
 					Circle()
 						.fill(Color("purplePastel"))
@@ -32,11 +33,19 @@ struct ConverterView: View {
 						.frame(width: 40, height: 40)
 						.offset(x:200 , y:-120)
 				}
-			}
+				.onTapGesture {
+					showSheet.toggle()
+					
+					print("clic: \(showSheet)")
+				}
+			
 		}
+		.sheet(isPresented: $showSheet, content: {
+			Text("Sheet")
+		})
     }
 }
 
 #Preview {
-    ConverterView()
+	ConverterView(showSheet: false)
 }

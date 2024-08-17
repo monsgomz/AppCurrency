@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct Home: View {
-	@State  var currencies: Coin?
+//	@State  var currencyList: List? // se guardan los valores
+	@Environment(CallMethods.self) var methods
+	
     var body: some View {
 		
 		NavigationStack {
@@ -23,17 +25,7 @@ struct Home: View {
 				Text("Hola!")
 					.font(.custom("Noto Sans JP Black", size: 25))
 					.padding(.bottom)
-				
-				
-				
-				HStack {
-					Text("Fecha de actualización: ")
-						.font(.custom("Noto Sans JP Thin", size: 15))
-					Text("2 Agosto 2024")
-				}
-				.padding(.bottom)
-				
-				
+
 				///Favoritos
 				
 				Text("Favoritos")
@@ -56,13 +48,14 @@ struct Home: View {
 					.font(.custom("Noto Sans JP Thin", size: 16))
 				
 				ScrollView{
-					VStack(spacing: 10){
-						monedaItem()
-						monedaItem()
-						monedaItem()
-						monedaItem()
-						monedaItem()
+					LazyVStack(spacing: 10){ //TODO: ponerle filtro cambiable
+						ForEach(methods.currencyList?.currencies.prefix(10) .sorted(by: <) ?? [], id: \.key) { element in
+							MonedaItem(monedaNombre: element.value, nombreCorto: element.key)
+							
+						}
+						
 					}
+					
 				}
 				
 			}
@@ -88,11 +81,9 @@ struct Home: View {
 		}
 		.task {
 			do {
-				currencies = try await getCurrencies()
+				methods.fetchCurrencies()
 			}
-			catch {
-				
-			}
+			
 		}
 		
 		
@@ -100,5 +91,9 @@ struct Home: View {
 }
 
 #Preview {
+//	let methods = CallMethods()
+//	methods.currencyList = List(success: true, currencies: ["USD": "Dollar", "EUR": "Euro"])
+//	
 	Home()
+		.environment(CallMethods())
 }

@@ -5,8 +5,12 @@
 //  Created by Montserrat Gomez on 05/08/24.
 //
 
-/* API KEY f28408ce4118652a78e6a6b50cf25443
- http://api.exchangerate.host/live?access_key=
+/* 
+ iOS 9.0 and macOS 10.11 and later use App Transport Security (ATS) for all HTTP connections made with URLSession.
+ 
+ API KEY f28408ce4118652a78e6a6b50cf25443
+ https://api.exchangerate.host/live?access_key=
+ 
  GET:
  - lista: /list
  - live: /live informacion reciente
@@ -20,35 +24,53 @@
 import Foundation
 
 @Observable
-class CurrencyMV {
-	var currencies = [Coin]()
-
+class CallMethods {
+	var currencyList: List?
+	
+	func fetchCurrencies() {
+		Task {
+			do {
+				currencyList = try await getCurrencies()
+				
+			} catch {
+				print("Error fetching currencies: \(error)")
+			}
+		}
+	}
 }
 
 
-func getCurrencies() async throws -> Coin {
+func getCurrencies() async throws -> List {
+	/*
+	 - Creating URL
+	 - Fetching
+	 - Decode
+	 */
 	
-	let endpoint = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json"
+	///creating
+	let endpoint = "https://api.exchangerate.host/list?access_key=f28408ce4118652a78e6a6b50cf25443"
 	
 	guard let url = URL(string: endpoint) else {
 		print("DEBUG: invalid url")
-		throw CoinErrors.invalidURL
+		throw errors.invalidURL
 	}
 	
-	let (data, response) = try await URLSession.shared.data(from: url)
-	
-	///check the response
-	guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-		print("Invalid response")
-		throw CoinErrors.invalidResponse
-	}
-	
+	///decodign
 	do {
+		///Fetching
+		let (data, response) = try await URLSession.shared.data(from: url)
+		
+		///check the response
+		guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+			print("Invalid response")
+			throw errors.invalidResponse
+		}
+		
 		 let decoder = JSONDecoder()
-		return try decoder.decode(Coin.self, from: data)
+		return try decoder.decode(List.self, from: data)
 		
 	} catch {
-		throw CoinErrors.invalidData
+		throw errors.invalidData
 	}
 	
 }

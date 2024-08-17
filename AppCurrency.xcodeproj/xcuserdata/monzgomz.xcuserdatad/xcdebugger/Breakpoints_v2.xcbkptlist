@@ -7,91 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "97908119-6450-443E-9221-7C6534DD3E49"
-            shouldBeEnabled = "Yes"
+            uuid = "B2FBBD1A-E6D0-4217-A101-7146ADF1D65F"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppCurrency/Views/Home.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "97908119-6450-443E-9221-7C6534DD3E49 - eb9de07e54dbc03f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 @Sendable () async -&gt; () in AppCurrency.Home.body.getter : some"
-                  moduleName = "AppCurrency"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/monzgomz/Documents/Estudio/Swift/AppCurrency/AppCurrency/Views/Home.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91">
-               </Location>
-               <Location
-                  uuid = "97908119-6450-443E-9221-7C6534DD3E49 - 759d08865c8d1ebb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for closure #2 @Sendable () async -&gt; () in AppCurrency.Home.body.getter : some"
-                  moduleName = "AppCurrency"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/monzgomz/Documents/Estudio/Swift/AppCurrency/AppCurrency/Views/Home.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91">
-               </Location>
-               <Location
-                  uuid = "97908119-6450-443E-9221-7C6534DD3E49 - 5c16e3648545db1c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) suspend resume partial function for closure #2 @Sendable () async -&gt; () in AppCurrency.Home.body.getter : some"
-                  moduleName = "AppCurrency"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/monzgomz/Documents/Estudio/Swift/AppCurrency/AppCurrency/Views/Home.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91">
-               </Location>
-               <Location
-                  uuid = "97908119-6450-443E-9221-7C6534DD3E49 - 487d94c3ea6cb91f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in AppCurrency.Home.body.getter : some"
-                  moduleName = "AppCurrency"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/monzgomz/Documents/Estudio/Swift/AppCurrency/AppCurrency/Views/Home.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6AC7B69A-FD67-4D3F-A3E3-ED9699FDA4FB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppCurrency/ModelView/CurrencyMV.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getCurrencies()"
-            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
