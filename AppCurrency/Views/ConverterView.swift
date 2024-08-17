@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ConverterView: View {
 	@State var showSheet: Bool = false
+	@Environment(CallMethods.self) var methods
 	
     var body: some View {
 		VStack(alignment: .leading){
@@ -41,11 +42,13 @@ struct ConverterView: View {
 			
 		}
 		.sheet(isPresented: $showSheet, content: {
-			Text("Sheet")
+			SheetView()
+					.environment(methods)
 		})
     }
 }
 
 #Preview {
 	ConverterView(showSheet: false)
+		.environment(CallMethods())
 }

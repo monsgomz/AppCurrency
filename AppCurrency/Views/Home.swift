@@ -76,6 +76,7 @@ struct Home: View {
 							.offset(x:70 , y:-120)
 					}
 				}
+						.environment(methods)
 			}
 			
 		}

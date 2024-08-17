@@ -8,67 +8,35 @@
 import SwiftUI
 
 struct SheetView: View {
-	@State var showButton: Bool
-	@State var selectedOptionIndex: String
-	@Environment(CallMethods.self) var methods
 	
-    var body: some View {
-		 var list = methods.currencyList?.currencies
-		
-		VStack{
+	@Environment(CallMethods.self) var methods
+	@State private var selectedFruit: String = "MXN"
+	
+	var body: some View {
+		VStack {
+			Menu(content: {
+				Picker("Moneda", selection: $selectedFruit) {
+					ForEach(methods.currencyList?.currencies.sorted(by: <) ?? [], id: \.key) { element in
+						Text(element.value)
+					}
+				}
+			}, label: {
+				(Text("\(selectedFruit)  ") + Text(Image(systemName: "chevron.up")))
+			})
+			.padding(.all, 16)
+			.foregroundStyle(Color.white)
+			.background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
 			
-			VStack{
-				Button {
-					//accion
-				} label: {
-					HStack {
-						Text("texto")
-						Spacer()
-						Image(systemName: "chevron.down")
-						//añadir rotacion
-						
-					}
-				}
-				
-				//menu
-				
-				if(showButton) {
-					ScrollView {
-						LazyVStack {
-							ForEach(list?.sorted(by: <) ?? [], id: \.key) { element in
-								Button(action: {
-									withAnimation {
-										selectedOptionIndex = element.key
-										showButton.toggle()
-									}
-									
-								}, label: {
-									HStack {
-										Text(list?[selectedOptionIndex] ?? "")
-										Spacer()
-										if (element.key == selectedOptionIndex) {
-											Image(systemName: "checkmark.circle.fill")
-											
-										}
-									}
-								})
-								
-								
-							}
-						}
-					}
-					
-				}
-			}
-								   
-
 		}
-    }
-}
+		.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+		.background(Color(UIColor.lightGray).opacity(0.4))
 
+	}
+}
 #Preview {
 //	let methods = CallMethods()
 //	methods.currencyList = List(success: true, currencies: ["USD": "Dollar", "EUR": "Euro"])
-	SheetView(showButton: false, selectedOptionIndex: "MXN")
+	SheetView()
 		.environment(CallMethods())
+//
 }
