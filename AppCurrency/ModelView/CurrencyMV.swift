@@ -37,7 +37,7 @@ func getCurrencies() async throws -> ListCurrency {
 	 - Decode
 	 */
 	
-	///creating
+	///creating URL
 	let endpoint = "https://api.exchangerate.host/list?access_key=f28408ce4118652a78e6a6b50cf25443"
 	
 	guard let url = URL(string: endpoint) else {
@@ -66,7 +66,37 @@ func getCurrencies() async throws -> ListCurrency {
 }
 
 // get conversion
-func convert() {
+func getConvert(from: String, to: String, amount: Int) async throws -> Convert {
+	
+	///creating URL
+	let endpoint = "https://api.exchangerate.host/convert?from=CAD&to=MXN&amount=234&access_key=f28408ce4118652a78e6a6b50cf25443"
+	
+	guard let url = URL(string: endpoint) else {
+		print("DEBUG: invalid url")
+		throw errors.invalidURL
+	}
+	
+	///decoding
+	
+	do {
+		///Fetching
+		let (data, response) = try await URLSession.shared.data(from: url)
+		
+		///check the response
+		guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+			print("Invalid response")
+			throw errors.invalidResponse
+		}
+		
+		let decoder = JSONDecoder()
+		return try decoder.decode(Convert.self, from: data)
+		
+	} catch {
+		throw errors.invalidData
+	}
+	
+	
+	
 	
 }
 

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C26896332C74290600F47806 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26896322C74290600F47806 /* CardView.swift */; };
+		C26896332C74290600F47806 /* CardViewRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26896322C74290600F47806 /* CardViewRight.swift */; };
+		C26896352C74445E00F47806 /* CardViewLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26896342C74445E00F47806 /* CardViewLeft.swift */; };
 		C2C3020D2C5DC40B00AADE3D /* AppCurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3020C2C5DC40B00AADE3D /* AppCurrencyApp.swift */; };
 		C2C3020F2C5DC40B00AADE3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3020E2C5DC40B00AADE3D /* ContentView.swift */; };
 		C2C302112C5DC40C00AADE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C302102C5DC40C00AADE3D /* Assets.xcassets */; };
@@ -23,7 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C26896322C74290600F47806 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C26896322C74290600F47806 /* CardViewRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewRight.swift; sourceTree = "<group>"; };
+		C26896342C74445E00F47806 /* CardViewLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewLeft.swift; sourceTree = "<group>"; };
 		C2C302092C5DC40B00AADE3D /* AppCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C3020C2C5DC40B00AADE3D /* AppCurrencyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCurrencyApp.swift; sourceTree = "<group>"; };
 		C2C3020E2C5DC40B00AADE3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,7 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				C2C302292C5DCD0300AADE3D /* FavoritosView.swift */,
-				C26896322C74290600F47806 /* CardView.swift */,
+				C26896322C74290600F47806 /* CardViewRight.swift */,
+				C26896342C74445E00F47806 /* CardViewLeft.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -210,11 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C26896332C74290600F47806 /* CardView.swift in Sources */,
+				C26896332C74290600F47806 /* CardViewRight.swift in Sources */,
 				C2C3020F2C5DC40B00AADE3D /* ContentView.swift in Sources */,
 				C2C302332C617A7400AADE3D /* CurrencyMV.swift in Sources */,
 				C2C3021E2C5DC8B200AADE3D /* Home.swift in Sources */,
 				C2C302312C617A1F00AADE3D /* modelCurrency.swift in Sources */,
+				C26896352C74445E00F47806 /* CardViewLeft.swift in Sources */,
 				C2C3022A2C5DCD0300AADE3D /* FavoritosView.swift in Sources */,
 				C2C3020D2C5DC40B00AADE3D /* AppCurrencyApp.swift in Sources */,
 			);
