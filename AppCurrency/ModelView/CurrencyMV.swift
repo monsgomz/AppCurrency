@@ -25,22 +25,12 @@ import Foundation
 
 @Observable
 class CallMethods {
-	var currencyList: List?
+	var currencyList = [ListCurrency]()
 	
-	func fetchCurrencies() {
-		Task {
-			do {
-				currencyList = try await getCurrencies()
-				
-			} catch {
-				print("Error fetching currencies: \(error)")
-			}
-		}
-	}
 }
 
 
-func getCurrencies() async throws -> List {
+func getCurrencies() async throws -> ListCurrency {
 	/*
 	 - Creating URL
 	 - Fetching
@@ -67,11 +57,16 @@ func getCurrencies() async throws -> List {
 		}
 		
 		 let decoder = JSONDecoder()
-		return try decoder.decode(List.self, from: data)
+		return try decoder.decode(ListCurrency.self, from: data)
 		
 	} catch {
 		throw errors.invalidData
 	}
+	
+}
+
+// get conversion
+func convert() {
 	
 }
 

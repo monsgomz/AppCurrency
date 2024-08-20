@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: list https://api.exchangerate.host/list?access_key=f28408ce4118652a78e6a6b50cf25443
-struct List: Codable {
+struct ListCurrency: Codable {
 	var success: Bool
 //	var terms, privacy: String
 	var currencies: [String: String]
