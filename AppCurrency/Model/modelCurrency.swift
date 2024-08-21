@@ -39,7 +39,7 @@ struct Info: Codable {
 
 struct Query: Codable {
 	var from, to: String
-	var amount: Int
+	var amount: Double
 }
 
 //MARK: timeframe https://api.exchangerate.host/timeframe?currencies=USD,GBP,EUR&start_date=2010-03-01&end_date=2010-04-01&access_key=f28408ce4118652a78e6a6b50cf25443

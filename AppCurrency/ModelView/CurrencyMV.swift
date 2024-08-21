@@ -66,16 +66,30 @@ func getCurrencies() async throws -> ListCurrency {
 }
 
 // get conversion
-func getConvert(from: String, to: String, amount: Int) async throws -> Convert {
+func getConvert(from: String, to: String, amount: Double) async throws -> Convert {
 	
 	///creating URL
-	let endpoint = "https://api.exchangerate.host/convert?from=CAD&to=MXN&amount=234&access_key=f28408ce4118652a78e6a6b50cf25443"
 	
-	guard let url = URL(string: endpoint) else {
-		print("DEBUG: invalid url")
+	var urlComponents = URLComponents()
+	urlComponents.scheme = "https"
+	urlComponents.host = "api.exchangerate.host"
+	urlComponents.path = "/convert"
+	urlComponents.queryItems = [
+	URLQueryItem(name: "from", value: from),
+	URLQueryItem(name: "to", value: to),
+	URLQueryItem(name: "amount", value: String(amount)),
+	URLQueryItem(name: "access_key", value: "f28408ce4118652a78e6a6b50cf25443")
+	]
+	
+//	let endpoint = "https://api.exchangerate.host/convert?from=CAD&to=MXN&amount=234&access_key=f28408ce4118652a78e6a6b50cf25443"
+//	
+
+	guard let url = urlComponents.url else {
+		print("DEBUG: INVALID URL")
 		throw errors.invalidURL
 	}
 	
+	print(url)
 	///decoding
 	
 	do {

@@ -11,6 +11,7 @@ struct CardViewLeft: View {
 	
 	@Binding var listCurrencies: ListCurrency?
 	@Binding var toCurrency: String
+	@Binding var convertResult : Convert?
 	
     var body: some View {
 		HStack (){
@@ -33,9 +34,6 @@ struct CardViewLeft: View {
 					}
 					.pickerStyle(.menu)
 					.frame(width: 115, alignment: .center)
-					.onChange(of: toCurrency){
-						print("DEBUG: tocurrency cambiado")
-					}
 					.background(
 						RoundedRectangle(cornerRadius: 25.0)
 							.stroke(.white, lineWidth: 1)
@@ -63,5 +61,6 @@ struct CardViewLeft: View {
 #Preview {
 	@State var currencies: ListCurrency? = ListCurrency(success: true, currencies: ["MXN": "Moneda Mexicana", "CAN": "Canada"])
 	@State var toCurrency: String = "MXN"
-	return CardViewLeft(listCurrencies: $currencies, toCurrency: $toCurrency)
+	@State var convertResult: Convert?
+	return CardViewLeft(listCurrencies: $currencies, toCurrency: $toCurrency, convertResult: convertResult)
 }
