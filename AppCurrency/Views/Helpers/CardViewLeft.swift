@@ -11,7 +11,7 @@ struct CardViewLeft: View {
 	
 	@Binding var listCurrencies: ListCurrency?
 	@Binding var toCurrency: String
-	@Binding var convertResult : Convert?
+	@Binding var convertResult : String
 	
     var body: some View {
 		HStack (){
@@ -40,7 +40,8 @@ struct CardViewLeft: View {
 						
 					)
 					Spacer()
-					Text("$123.00")
+					Text("$\(convertResult)")
+						
 						.font(.custom("NotoSansJP-Black", size: 24))
 						.padding(.trailing, 8)
 					
@@ -61,6 +62,6 @@ struct CardViewLeft: View {
 #Preview {
 	@State var currencies: ListCurrency? = ListCurrency(success: true, currencies: ["MXN": "Moneda Mexicana", "CAN": "Canada"])
 	@State var toCurrency: String = "MXN"
-	@State var convertResult: Convert?
-	return CardViewLeft(listCurrencies: $currencies, toCurrency: $toCurrency, convertResult: convertResult)
+	@State var convertResult: String = "0.0"
+	return CardViewLeft(listCurrencies: $currencies, toCurrency: $toCurrency, convertResult: $convertResult)
 }
