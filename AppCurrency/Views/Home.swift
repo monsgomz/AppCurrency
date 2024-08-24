@@ -3,7 +3,7 @@
 //  AppCurrency
 //
 //  Created by Montserrat Gomez on 02/08/24.
-//TODO: Añadir el resultado en un campo
+//TODO: Guardar en UserDefaults
 
 import SwiftUI
 
@@ -13,10 +13,19 @@ struct Home: View {
 	
 	@State var listCurrencies: ListCurrency?
 	@State var convertResult: Convert?
+	
 	@State private var amount: Double = 1.0
 	@State private var fromCurrency: String = "USD"
 	@State private var toCurrency: String = "MXN"
 	@State var result: String = "0.0"
+	
+	@State var offsetX: CGFloat = UIScreen.main.bounds.midX - 235
+	
+	@State var savedConversions: [ResultConversion] = []
+	
+	let defaults = UserDefaults.standard
+	let resultKey = "CONVERT-RESUTL"
+	
 	
 	var body: some View {
 		
@@ -42,16 +51,18 @@ struct Home: View {
 						}
 					}
 					
-				
-				Image("convertir")
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-					.frame(width: 40, height: 40, alignment: .center)
-				
-				Image(systemName: "star.fill")
+				HStack(alignment: .center){
+					Spacer()
+					Image("convertir")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 40, height: 40, alignment: .center)
+					Spacer()
+				}
+				.padding(5)
 				
 				CardViewLeft(listCurrencies: $listCurrencies, toCurrency: $toCurrency, convertResult: $result)
-					.offset(x: -30)
+					.offset(x: offsetX)
 					.onChange(of: toCurrency){
 						print("DEBUG: fromCurrency cambiado")
 						Task{
@@ -64,10 +75,25 @@ struct Home: View {
 				Text("Guardados")
 					.font(.callout)
 				
-				Spacer()
+				List(savedConversions){ element in
+					RowItem(numero1: String(element.amount), moneda1: element.fromCurrency, numero2: element.toCurrency, moneda2: element.result)
+				}
+				.overlay{
+					if savedConversions.isEmpty{
+						ContentUnavailableView {
+							Label("No hay elementos", systemImage: "australiandollarsign.circle")
+								.labelStyle(.iconOnly)
+						} description: {
+							Text("Guarda tu conversión favorita")
+						}
+					}
+					
+				}
+
 				
 				
 			}
+			.gesture(drag)
 			
 		}
 		.task {
@@ -77,6 +103,9 @@ struct Home: View {
 			catch {
 				
 			}
+		}
+		.onAppear{
+			loadConversions()
 		}
 		
 		
@@ -97,7 +126,6 @@ struct Home: View {
 		do {
 			convertResult = try await getConvert(from: fromC, to: toC, amount: number)
 			var convertion = convertResult?.result ?? 0.0
-			convertion = convertion.rounded()
 			result = String(format: "%.2f", convertion)
 			
 			
@@ -107,6 +135,54 @@ struct Home: View {
 			print("Error converting currency: \(error.localizedDescription)")
 		}
 	}
+	
+	var drag: some Gesture {
+		DragGesture()
+			.onChanged { value in
+				print("DEBUG: empezo arrastre")
+				withAnimation(.spring){
+					offsetX = value.translation.width
+					
+					
+					
+				}
+				
+				
+			}
+			.onEnded { value in
+				print("DEBUG: Termino")
+				withAnimation(.spring){
+					offsetX = -55
+				
+					let newResult = ResultConversion(id: UUID(), amount: amount, fromCurrency: fromCurrency, toCurrency: toCurrency, result: result)
+					
+					savedConversions.append(newResult)
+					
+					do {
+						let encodedData = try JSONEncoder().encode(savedConversions)
+						defaults.set(encodedData, forKey: resultKey)
+					} catch {
+						print("Error encoding data: \(error.localizedDescription)")
+					}
+					
+					
+				}
+			}
+		
+	}
+	
+	func loadConversions() {
+		if let savedData = defaults.data(forKey: resultKey) {
+			do {
+				savedConversions = try JSONDecoder().decode([ResultConversion].self, from: savedData)
+			} catch {
+				print("Error decoding data: \(error.localizedDescription)")
+			}
+		}
+	}
+	
+	
+	
 }
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C205DE562C780D4D009F0E0B /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C205DE552C780D4D009F0E0B /* RowItem.swift */; };
+		C205DE582C780F20009F0E0B /* LineDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C205DE572C780F20009F0E0B /* LineDivider.swift */; };
 		C26896332C74290600F47806 /* CardViewRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26896322C74290600F47806 /* CardViewRight.swift */; };
 		C26896352C74445E00F47806 /* CardViewLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26896342C74445E00F47806 /* CardViewLeft.swift */; };
 		C2C3020D2C5DC40B00AADE3D /* AppCurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3020C2C5DC40B00AADE3D /* AppCurrencyApp.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C205DE552C780D4D009F0E0B /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
+		C205DE572C780F20009F0E0B /* LineDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDivider.swift; sourceTree = "<group>"; };
 		C26896322C74290600F47806 /* CardViewRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewRight.swift; sourceTree = "<group>"; };
 		C26896342C74445E00F47806 /* CardViewLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewLeft.swift; sourceTree = "<group>"; };
 		C2C302092C5DC40B00AADE3D /* AppCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,8 @@
 				C2C302292C5DCD0300AADE3D /* FavoritosView.swift */,
 				C26896322C74290600F47806 /* CardViewRight.swift */,
 				C26896342C74445E00F47806 /* CardViewLeft.swift */,
+				C205DE552C780D4D009F0E0B /* RowItem.swift */,
+				C205DE572C780F20009F0E0B /* LineDivider.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,6 +224,8 @@
 				C2C302332C617A7400AADE3D /* CurrencyMV.swift in Sources */,
 				C2C3021E2C5DC8B200AADE3D /* Home.swift in Sources */,
 				C2C302312C617A1F00AADE3D /* modelCurrency.swift in Sources */,
+				C205DE582C780F20009F0E0B /* LineDivider.swift in Sources */,
+				C205DE562C780D4D009F0E0B /* RowItem.swift in Sources */,
 				C26896352C74445E00F47806 /* CardViewLeft.swift in Sources */,
 				C2C3022A2C5DCD0300AADE3D /* FavoritosView.swift in Sources */,
 				C2C3020D2C5DC40B00AADE3D /* AppCurrencyApp.swift in Sources */,

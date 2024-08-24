@@ -58,6 +58,14 @@ struct Timeframe: Codable {
 	}
 }
 
+struct ResultConversion: Codable, Identifiable {
+	let id: UUID
+	let amount: Double
+	let fromCurrency: String
+	let toCurrency: String
+	let result: String
+}
+
 enum errors: Error {
 	case invalidURL
 	case invalidResponse
