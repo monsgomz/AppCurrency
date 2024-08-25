@@ -14,8 +14,8 @@
             filePath = "AppCurrency/Views/Home.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "callConvert()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,32 +23,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "48AE5156-A846-4F3D-819F-A3C76E2BE589"
-            shouldBeEnabled = "No"
+            uuid = "544CFA25-275D-4FA0-BC6E-151DF6A66371"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppCurrency/ModelView/CurrencyMV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "getConvert(from:to:amount:)"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getCurrencies()"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "544CFA25-275D-4FA0-BC6E-151DF6A66371 - 1c36e368a84e2ac8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for AppCurrency.getCurrencies() async throws -&gt; AppCurrency.ListCurrency"
+                  moduleName = "AppCurrency"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monzgomz/Documents/Estudio/Swift/AppCurrency/AppCurrency/ModelView/CurrencyMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+               <Location
+                  uuid = "544CFA25-275D-4FA0-BC6E-151DF6A66371 - 1c36e368a84e2ac8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for AppCurrency.getCurrencies() async throws -&gt; AppCurrency.ListCurrency"
+                  moduleName = "AppCurrency"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monzgomz/Documents/Estudio/Swift/AppCurrency/AppCurrency/ModelView/CurrencyMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DCC2B9CB-1FF0-48DC-99C9-B59896AC5A65"
-            shouldBeEnabled = "No"
+            uuid = "1D8498B5-D56B-4291-8BF9-26C5CF7EA8FF"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppCurrency/ModelView/CurrencyMV.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "getConvert(from:to:amount:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getCurrencies()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

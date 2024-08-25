@@ -3,7 +3,7 @@
 //  AppCurrency
 //
 //  Created by Montserrat Gomez on 02/08/24.
-//TODO: Guardar en UserDefaults
+//TODO: Arreglar el diseño
 
 import SwiftUI
 
@@ -30,14 +30,24 @@ struct Home: View {
 	var body: some View {
 		
 		NavigationStack {
-			VStack(alignment: .leading, spacing: 10){
-				Text("Home")
-					.font(.custom("NotoSansJP-Black", size: 28))
+			VStack(alignment: .leading, spacing: 15){
+				HStack{
+					Text("Home")
+						.font(.custom("NotoSansJP-Black", size: 28))
+						.padding(.leading, 15)
+					Spacer()
+					
+					if !savedConversions.isEmpty {
+						EditButton()
+						.padding()
+					}
+				}
 				
 				//MARK: Cards
 				
 				CardViewRight(listCurrencies: $listCurrencies, fromCurrency: $fromCurrency, amount: $amount)
 					.offset(x: 30)
+				
 					.onChange(of: amount){
 						print("DEBUG: fromCurrency cambiado")
 						Task{
@@ -51,16 +61,7 @@ struct Home: View {
 						}
 					}
 					
-				HStack(alignment: .center){
-					Spacer()
-					Image("convertir")
-						.resizable()
-						.aspectRatio(contentMode: .fit)
-						.frame(width: 40, height: 40, alignment: .center)
-					Spacer()
-				}
-				.padding(5)
-				
+									
 				CardViewLeft(listCurrencies: $listCurrencies, toCurrency: $toCurrency, convertResult: $result)
 					.offset(x: offsetX)
 					.onChange(of: toCurrency){
@@ -69,26 +70,51 @@ struct Home: View {
 							await callConvert()
 						}
 					}
+					.overlay {
+						Image("convertir")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 40, height: 40, alignment: .center)
+							.padding()
+							.background(
+								Circle()
+									.fill(.white)
+									.shadow(color: .gray, radius: 4, x: 0.0, y: 4.0)
+							)
+							.offset(x: 0, y: -60)
+						
+					}
+
 
 				//MARK: Guardados
 				
 				Text("Guardados")
-					.font(.callout)
+					.font(.custom("NotoSansJP-Medium", size: 18))
+					.padding(.leading, 15)
+					.padding(.top, 10)
 				
-				List(savedConversions){ element in
-					RowItem(numero1: String(element.amount), moneda1: element.fromCurrency, numero2: element.toCurrency, moneda2: element.result)
+				List{
+					ForEach(savedConversions){element in
+						RowItem(numero1: String(element.amount), moneda1: element.fromCurrency, numero2: element.toCurrency, moneda2: element.result)
+					}
+					.onDelete(perform: { indexSet in
+						deleteSaved(at: indexSet)
+					})
 				}
+				.listStyle(.plain)
 				.overlay{
 					if savedConversions.isEmpty{
 						ContentUnavailableView {
 							Label("No hay elementos", systemImage: "australiandollarsign.circle")
 								.labelStyle(.iconOnly)
+								.foregroundStyle(Color.purplePastel)
 						} description: {
 							Text("Guarda tu conversión favorita")
 						}
 					}
 					
 				}
+				
 
 				
 				
@@ -96,7 +122,7 @@ struct Home: View {
 			.gesture(drag)
 			
 		}
-		.task {
+		.toolbar { EditButton() }.task {
 			do {
 				listCurrencies = try await getCurrencies()
 			}
@@ -125,7 +151,7 @@ struct Home: View {
 		
 		do {
 			convertResult = try await getConvert(from: fromC, to: toC, amount: number)
-			var convertion = convertResult?.result ?? 0.0
+			let convertion = convertResult?.result ?? 0.0
 			result = String(format: "%.2f", convertion)
 			
 			
@@ -175,6 +201,26 @@ struct Home: View {
 		if let savedData = defaults.data(forKey: resultKey) {
 			do {
 				savedConversions = try JSONDecoder().decode([ResultConversion].self, from: savedData)
+			} catch {
+				print("Error decoding data: \(error.localizedDescription)")
+			}
+		}
+	}
+	
+	func deleteSaved(at indexSet: IndexSet) {
+		if let savedData = defaults.data(forKey: resultKey) { //si hay informacion guardada
+			do {
+				//decodificar
+				var savedConversions = try JSONDecoder().decode([ResultConversion].self, from: savedData)
+				
+				savedConversions.remove(atOffsets: indexSet)
+				
+				// Volver a guardar los datos actualizados en UserDefaults
+				let encodedData = try JSONEncoder().encode(savedConversions)
+				defaults.set(encodedData, forKey: resultKey)
+				
+				// Actualizar la lista
+				self.savedConversions = savedConversions
 			} catch {
 				print("Error decoding data: \(error.localizedDescription)")
 			}

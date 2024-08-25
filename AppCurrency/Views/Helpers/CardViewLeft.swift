@@ -33,10 +33,11 @@ struct CardViewLeft: View {
 						}
 					}
 					.pickerStyle(.menu)
-					.frame(width: 115, alignment: .center)
+					.frame(width: 120, alignment: .center)
 					.background(
 						RoundedRectangle(cornerRadius: 25.0)
 							.stroke(.white, lineWidth: 1)
+							.shadow(color: .indigo, radius: 5, x: 0.0, y: 0.0)
 						
 					)
 					Spacer()
@@ -55,6 +56,7 @@ struct CardViewLeft: View {
 		.background(
 			RoundedRectangle(cornerRadius: 25.0)
 				.fill(Color.purplePastel)
+				.shadow(color: .gray, radius: 4, x: 0.0, y: 4.0)
 		)
     }
 }

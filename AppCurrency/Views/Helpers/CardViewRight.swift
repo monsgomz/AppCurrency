@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CardViewRight: View {
+	
+	//MARK: Propiedades
 	@Binding var listCurrencies: ListCurrency?
 	@Binding var fromCurrency: String
 	@Binding var amount: Double
@@ -34,16 +36,19 @@ struct CardViewRight: View {
 				Picker(selection: $fromCurrency, label: Text("Picker")) {
 					ForEach(listCurrencies?.currencies.sorted(by: <) ?? [], id: \.key){ element in
 						Text(element.key).tag(element.key)
+							
 					}
 				}
 				.pickerStyle(.menu)
-				.frame(width: 115, alignment: .center)
+				.frame(width: 120, alignment: .center)
 				.background(
 					RoundedRectangle(cornerRadius: 25.0)
 						.stroke(.white, lineWidth: 1)
+						.shadow(color: .indigo, radius: 5, x: 0.0, y: 0.0)
 						
 				)
 				.padding(.trailing, 58)
+				
 
 				
 			}
@@ -54,7 +59,8 @@ struct CardViewRight: View {
 		.padding(.leading, 8)
 		.background(
 			RoundedRectangle(cornerRadius: 25.0)
-				.fill(Color.lilaPastel)
+				.fill(Color.yC)
+				.shadow(color: .gray, radius: 4, x: 0.0, y: 4.0)
 		)
     }
 }

@@ -3,7 +3,7 @@
 //  AppCurrency
 //
 //  Created by Montserrat Gomez on 22/08/24.
-//TODO: Mandar la informacion del resultado aqui para mostrarse
+//
 
 import SwiftUI
 
@@ -15,14 +15,17 @@ struct RowItem: View {
 	
     var body: some View {
 		HStack(spacing: 0){
-			Text("\(numero1)")
+			Text("$\(numero1)")
 				.font(.custom("NotoSansJP-Black", size: 18))
 				.padding(.leading, 10)
 			Text("\(moneda1)")
 				.font(.custom("NotoSansJP-Black", size: 18))
 				.padding(.leading, 8)
 			Spacer()
-			Text("\(numero2)")
+			Text("=")
+			Spacer()
+				.font(.custom("NotoSansJP-Black", size: 18))
+			Text("$\(numero2)")
 				.font(.custom("NotoSansJP-Black", size: 18))
 				.padding(.trailing, 8)
 			Text("\(moneda2)")
@@ -33,13 +36,13 @@ struct RowItem: View {
 		.padding(8)
 		.background(
 		RoundedRectangle(cornerRadius: 15.0)
-			.fill(.purplePastel)
+			.fill(.greenPastel)
 		)
-		.overlay{
-			LineDivider()
-				.stroke(Color.white , lineWidth: 9.0)
-				.frame(width: 90, height: 90, alignment: .center)
-		}
+//		.overlay{
+//			LineDivider()
+//				.stroke(Color.white , lineWidth: 9.0)
+//				.frame(width: 90, height: 90, alignment: .center)
+//		}
     }
 }
 
