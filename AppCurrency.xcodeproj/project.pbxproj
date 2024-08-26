@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C205DE562C780D4D009F0E0B /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C205DE552C780D4D009F0E0B /* RowItem.swift */; };
-		C205DE582C780F20009F0E0B /* LineDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C205DE572C780F20009F0E0B /* LineDivider.swift */; };
 		C26896332C74290600F47806 /* CardViewRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26896322C74290600F47806 /* CardViewRight.swift */; };
 		C26896352C74445E00F47806 /* CardViewLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26896342C74445E00F47806 /* CardViewLeft.swift */; };
 		C2C3020D2C5DC40B00AADE3D /* AppCurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3020C2C5DC40B00AADE3D /* AppCurrencyApp.swift */; };
-		C2C3020F2C5DC40B00AADE3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3020E2C5DC40B00AADE3D /* ContentView.swift */; };
 		C2C302112C5DC40C00AADE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C302102C5DC40C00AADE3D /* Assets.xcassets */; };
 		C2C302142C5DC40C00AADE3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C302132C5DC40C00AADE3D /* Preview Assets.xcassets */; };
 		C2C3021E2C5DC8B200AADE3D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3021D2C5DC8B200AADE3D /* Home.swift */; };
@@ -20,19 +18,16 @@
 		C2C302232C5DCA7D00AADE3D /* NotoSansJP-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2C302222C5DCA7C00AADE3D /* NotoSansJP-Thin.ttf */; };
 		C2C302252C5DCA8800AADE3D /* NotoSansJP-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2C302242C5DCA8800AADE3D /* NotoSansJP-Regular.ttf */; };
 		C2C302272C5DCA9500AADE3D /* NotoSansJP-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2C302262C5DCA9500AADE3D /* NotoSansJP-Medium.ttf */; };
-		C2C3022A2C5DCD0300AADE3D /* FavoritosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C302292C5DCD0300AADE3D /* FavoritosView.swift */; };
 		C2C302312C617A1F00AADE3D /* modelCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C302302C617A1F00AADE3D /* modelCurrency.swift */; };
 		C2C302332C617A7400AADE3D /* CurrencyMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C302322C617A7400AADE3D /* CurrencyMV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C205DE552C780D4D009F0E0B /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
-		C205DE572C780F20009F0E0B /* LineDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDivider.swift; sourceTree = "<group>"; };
 		C26896322C74290600F47806 /* CardViewRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewRight.swift; sourceTree = "<group>"; };
 		C26896342C74445E00F47806 /* CardViewLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewLeft.swift; sourceTree = "<group>"; };
 		C2C302092C5DC40B00AADE3D /* AppCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C3020C2C5DC40B00AADE3D /* AppCurrencyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCurrencyApp.swift; sourceTree = "<group>"; };
-		C2C3020E2C5DC40B00AADE3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C2C302102C5DC40C00AADE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2C302132C5DC40C00AADE3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C2C3021D2C5DC8B200AADE3D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -41,7 +36,6 @@
 		C2C302242C5DCA8800AADE3D /* NotoSansJP-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Regular.ttf"; sourceTree = "<group>"; };
 		C2C302262C5DCA9500AADE3D /* NotoSansJP-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Medium.ttf"; sourceTree = "<group>"; };
 		C2C302282C5DCAEA00AADE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C2C302292C5DCD0300AADE3D /* FavoritosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosView.swift; sourceTree = "<group>"; };
 		C2C302302C617A1F00AADE3D /* modelCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelCurrency.swift; sourceTree = "<group>"; };
 		C2C302322C617A7400AADE3D /* CurrencyMV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +76,6 @@
 				C2C3021B2C5DC46B00AADE3D /* Views */,
 				C2C3021A2C5DC43B00AADE3D /* Model */,
 				C2C3020C2C5DC40B00AADE3D /* AppCurrencyApp.swift */,
-				C2C3020E2C5DC40B00AADE3D /* ContentView.swift */,
 				C2C302102C5DC40C00AADE3D /* Assets.xcassets */,
 				C2C302122C5DC40C00AADE3D /* Preview Content */,
 			);
@@ -136,11 +129,9 @@
 		C2C3022F2C61747600AADE3D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C2C302292C5DCD0300AADE3D /* FavoritosView.swift */,
 				C26896322C74290600F47806 /* CardViewRight.swift */,
 				C26896342C74445E00F47806 /* CardViewLeft.swift */,
 				C205DE552C780D4D009F0E0B /* RowItem.swift */,
-				C205DE572C780F20009F0E0B /* LineDivider.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -220,14 +211,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26896332C74290600F47806 /* CardViewRight.swift in Sources */,
-				C2C3020F2C5DC40B00AADE3D /* ContentView.swift in Sources */,
 				C2C302332C617A7400AADE3D /* CurrencyMV.swift in Sources */,
 				C2C3021E2C5DC8B200AADE3D /* Home.swift in Sources */,
 				C2C302312C617A1F00AADE3D /* modelCurrency.swift in Sources */,
-				C205DE582C780F20009F0E0B /* LineDivider.swift in Sources */,
 				C205DE562C780D4D009F0E0B /* RowItem.swift in Sources */,
 				C26896352C74445E00F47806 /* CardViewLeft.swift in Sources */,
-				C2C3022A2C5DCD0300AADE3D /* FavoritosView.swift in Sources */,
 				C2C3020D2C5DC40B00AADE3D /* AppCurrencyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,14 +25,15 @@ struct CardViewRight: View {
 			Spacer()
 			
 			HStack(alignment: .center, spacing: 0){
+				
 				Text("$")
 					.font(.custom("NotoSansJP-Black", size: 24))
-				
 				TextField("amount", value: $amount, format: .number)
 					.keyboardType(.numberPad)
 					.font(.custom("NotoSansJP-Black", size: 24))
 					
 				Spacer()
+				
 				Picker(selection: $fromCurrency, label: Text("Picker")) {
 					ForEach(listCurrencies?.currencies.sorted(by: <) ?? [], id: \.key){ element in
 						Text(element.key).tag(element.key)
@@ -45,11 +46,8 @@ struct CardViewRight: View {
 					RoundedRectangle(cornerRadius: 25.0)
 						.stroke(.white, lineWidth: 1)
 						.shadow(color: .indigo, radius: 5, x: 0.0, y: 0.0)
-						
 				)
 				.padding(.trailing, 58)
-				
-
 				
 			}
 			.padding(.bottom, 8)

@@ -23,13 +23,14 @@
 
 import Foundation
 
+///Vaiable que va a guardar los datos para toda la app
 @Observable
 class CallMethods {
 	var currencyList = [ListCurrency]()
 	
 }
 
-
+///Lllamada a API para mostrar las monedas
 func getCurrencies() async throws -> ListCurrency {
 	/*
 	 - Creating URL
@@ -65,11 +66,11 @@ func getCurrencies() async throws -> ListCurrency {
 	
 }
 
-// get conversion
+/// llamada a API con los valores para convertir
+/*	let endpoint =  "https://api.exchangerate.host/convert?from=CAD&to=MXN&amount=234&access_key=f28408ce4118652a78e6a6b50cf25443" */
 func getConvert(from: String, to: String, amount: Double) async throws -> Convert {
 	
 	///creating URL
-	
 	var urlComponents = URLComponents()
 	urlComponents.scheme = "https"
 	urlComponents.host = "api.exchangerate.host"
@@ -81,17 +82,12 @@ func getConvert(from: String, to: String, amount: Double) async throws -> Conver
 	URLQueryItem(name: "access_key", value: "f28408ce4118652a78e6a6b50cf25443")
 	]
 	
-//	let endpoint = "https://api.exchangerate.host/convert?from=CAD&to=MXN&amount=234&access_key=f28408ce4118652a78e6a6b50cf25443"
-//	
-
 	guard let url = urlComponents.url else {
 		print("DEBUG: INVALID URL")
 		throw errors.invalidURL
 	}
-	
-	print(url)
+
 	///decoding
-	
 	do {
 		///Fetching
 		let (data, response) = try await URLSession.shared.data(from: url)
@@ -108,9 +104,6 @@ func getConvert(from: String, to: String, amount: Double) async throws -> Conver
 	} catch {
 		throw errors.invalidData
 	}
-	
-	
-	
 	
 }
 

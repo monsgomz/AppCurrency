@@ -12,7 +12,7 @@ struct AppCurrencyApp: App {
 	@State private var methods = CallMethods()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Home()
 				.environment(methods)
         }
     }

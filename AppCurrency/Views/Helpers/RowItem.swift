@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct RowItem: View {
+	
 	var numero1: String
 	var moneda1: String
 	var numero2: String
 	var moneda2: String
 	
     var body: some View {
+		
 		HStack(spacing: 0){
+			
 			Text("$\(numero1)")
 				.font(.custom("NotoSansJP-Black", size: 18))
 				.padding(.leading, 10)
 			Text("\(moneda1)")
 				.font(.custom("NotoSansJP-Black", size: 18))
 				.padding(.leading, 8)
+			
 			Spacer()
 			Text("=")
 			Spacer()
+			
 				.font(.custom("NotoSansJP-Black", size: 18))
 			Text("$\(numero2)")
 				.font(.custom("NotoSansJP-Black", size: 18))
@@ -38,11 +43,6 @@ struct RowItem: View {
 		RoundedRectangle(cornerRadius: 15.0)
 			.fill(.greenPastel)
 		)
-//		.overlay{
-//			LineDivider()
-//				.stroke(Color.white , lineWidth: 9.0)
-//				.frame(width: 90, height: 90, alignment: .center)
-//		}
     }
 }
 

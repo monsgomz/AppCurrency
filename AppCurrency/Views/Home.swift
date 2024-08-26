@@ -3,7 +3,7 @@
 //  AppCurrency
 //
 //  Created by Montserrat Gomez on 02/08/24.
-//TODO: Arreglar el diseño
+//TODO: Limpiar código y probar
 
 import SwiftUI
 
@@ -47,7 +47,6 @@ struct Home: View {
 				
 				CardViewRight(listCurrencies: $listCurrencies, fromCurrency: $fromCurrency, amount: $amount)
 					.offset(x: 30)
-				
 					.onChange(of: amount){
 						print("DEBUG: fromCurrency cambiado")
 						Task{
@@ -61,11 +60,10 @@ struct Home: View {
 						}
 					}
 					
-									
 				CardViewLeft(listCurrencies: $listCurrencies, toCurrency: $toCurrency, convertResult: $result)
 					.offset(x: offsetX)
+					.gesture(drag)
 					.onChange(of: toCurrency){
-						print("DEBUG: fromCurrency cambiado")
 						Task{
 							await callConvert()
 						}
@@ -82,7 +80,6 @@ struct Home: View {
 									.shadow(color: .gray, radius: 4, x: 0.0, y: 4.0)
 							)
 							.offset(x: 0, y: -60)
-						
 					}
 
 
@@ -114,12 +111,8 @@ struct Home: View {
 					}
 					
 				}
-				
-
-				
-				
+			
 			}
-			.gesture(drag)
 			
 		}
 		.toolbar { EditButton() }.task {
@@ -134,18 +127,14 @@ struct Home: View {
 			loadConversions()
 		}
 		
-		
-		
-		
 	}
 	
 	/// funcion para llamar a la API para convertir
-	/// Resutl: Optional(AppCurrency.Convert(success: true, query: AppCurrency.Query(from: "CAD", to: "MXN", amount: 200.5), info: AppCurrency.Info(timestamp: 1724358676, quote: 14.324547), result: 2872.071674))
+/*  Resutl: Optional(AppCurrency.Convert(success: true, query: AppCurrency.Query(from: "CAD", to: "MXN", amount: 200.5), info: AppCurrency.Info(timestamp: 1724358676, quote: 14.324547), result: 2872.071674)) */
 	func callConvert() async {
-		// Validar amount
-		let number = amount < 0.0 ? 1.0 : amount
 		
-		// Validar fromCurrency y toCurrency
+		/// Validaciones
+		let number = amount < 0.0 ? 1.0 : amount
 		let fromC = fromCurrency.isEmpty ? "MXN" : fromCurrency
 		let toC = toCurrency.isEmpty ? "CAD" : toCurrency
 		
@@ -154,9 +143,7 @@ struct Home: View {
 			let convertion = convertResult?.result ?? 0.0
 			result = String(format: "%.2f", convertion)
 			
-			
-			
-			print("Conversion successful: \(String(describing: convertResult))")
+//			print("Conversion successful: \(String(describing: convertResult))")
 		} catch {
 			print("Error converting currency: \(error.localizedDescription)")
 		}
@@ -168,18 +155,13 @@ struct Home: View {
 				print("DEBUG: empezo arrastre")
 				withAnimation(.spring){
 					offsetX = value.translation.width
-					
-					
-					
 				}
-				
-				
 			}
 			.onEnded { value in
 				print("DEBUG: Termino")
 				withAnimation(.spring){
 					offsetX = -55
-				
+			
 					let newResult = ResultConversion(id: UUID(), amount: amount, fromCurrency: fromCurrency, toCurrency: toCurrency, result: result)
 					
 					savedConversions.append(newResult)
@@ -190,13 +172,13 @@ struct Home: View {
 					} catch {
 						print("Error encoding data: \(error.localizedDescription)")
 					}
-					
-					
 				}
 			}
-		
 	}
 	
+	//MARK: Funciones
+	
+	/// llama a la API para convertir
 	func loadConversions() {
 		if let savedData = defaults.data(forKey: resultKey) {
 			do {
@@ -207,19 +189,20 @@ struct Home: View {
 		}
 	}
 	
+	
+	/// Elimina del cache, decodifica y codifica para guardar y actualizar
+	/// - Parameter indexSet: elemento a borrar
 	func deleteSaved(at indexSet: IndexSet) {
 		if let savedData = defaults.data(forKey: resultKey) { //si hay informacion guardada
 			do {
-				//decodificar
+			
 				var savedConversions = try JSONDecoder().decode([ResultConversion].self, from: savedData)
 				
 				savedConversions.remove(atOffsets: indexSet)
 				
-				// Volver a guardar los datos actualizados en UserDefaults
 				let encodedData = try JSONEncoder().encode(savedConversions)
 				defaults.set(encodedData, forKey: resultKey)
-				
-				// Actualizar la lista
+			
 				self.savedConversions = savedConversions
 			} catch {
 				print("Error decoding data: \(error.localizedDescription)")
